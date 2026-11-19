@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hardhik Kavali</title>
+<meta name="description" content="Hardhik Kavali, AI and Machine Learning engineering student at Ballari Institute of Technology and Management. Projects, skills and contact.">
+<meta property="og:title" content="Hardhik Kavali | AI-ML Engineering Student">
+<meta property="og:description" content="Projects, skills and contact details for Hardhik Kavali, AI-ML engineering student.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Layout: one left-aligned column, sections indexed like an array (0..n), mono labels as the DSA thread. */
+:root {
+  --bg: #fbfbf8;
+  --surface: #ffffff;
+  --ink: #171918;
+  --muted: #68706b;
+  --line: #e1e6e2;
+  --accent: #287354;
+  --accent-soft: #e6f1eb;
+  --on-accent: #ffffff;
+  --font-display: "Sora", "Segoe UI", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #101512;
+    --surface: #171e1a;
+    --ink: #edf4ef;
+    --muted: #a4b2a9;
+    --line: #2c3a31;
+    --accent: #72c99b;
+    --accent-soft: #1d3829;
+    --on-accent: #101512;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #101512;
+  --surface: #171e1a;
+  --ink: #edf4ef;
+  --muted: #a4b2a9;
+  --line: #2c3a31;
+  --accent: #72c99b;
+  --accent-soft: #1d3829;
+  --on-accent: #101512;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+}
+.skip-link {
+  position: absolute; left: 24px; top: -48px; z-index: 20;
+  padding: 8px 12px; border-radius: 8px;
+  background: var(--surface); color: var(--ink); border: 1px solid var(--accent);
+}
+.skip-link:focus { top: 12px; }
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; line-height: 1.15; }
+
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+section { scroll-margin-top: 60px; }
+
+/* Nav */
+nav {
+  position: sticky; top: 0; z-index: 10;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 56px; }
+.logo { font-family: var(--font-mono); font-weight: 500; color: var(--ink); text-decoration: none; font-size: 14px; letter-spacing: 0; }
+.logo span { color: var(--accent); }
+nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; font-size: 14px; }
+nav ul a { color: var(--muted); text-decoration: none; }
+nav ul a:hover { color: var(--ink); }
+
+/* Hero */
+.hero { padding: 82px 24px 72px; display: grid; gap: 36px; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(220px, .6fr); gap: 80px; align-items: end; }
+.eyebrow { font-family: var(--font-mono); font-size: 14px; color: var(--accent); }
+.stack-label { margin-bottom: 6px; }
+.hero h1 { font-size: clamp(44px, 8vw, 82px); font-weight: 700; letter-spacing: -0.07em; max-width: 9ch; margin-top: 16px; }
+.hero p.lead { font-size: 20px; color: var(--muted); max-width: 55ch; margin: 0; }
+.hero-aside { border-left: 1px solid var(--accent); padding-left: 20px; color: var(--muted); }
+.hero-aside p { margin: 0 0 18px; }
+.hero-aside strong { display: block; color: var(--ink); font-family: var(--font-mono); font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 3px; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 9px 14px; border-radius: 3px; font-weight: 500; font-size: 14px;
+  text-decoration: none; border: 1px solid var(--line); color: var(--ink); background: var(--surface);
+}
+.btn:hover { border-color: var(--accent); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.btn svg { width: 18px; height: 18px; flex: none; }
+
+/* Skills as an array */
+.array { display: flex; flex-wrap: wrap; gap: 0; margin-top: 8px; }
+.cell { display: grid; text-align: center; }
+.cell b {
+  font-family: var(--font-mono); font-weight: 500; font-size: 14px;
+  padding: 9px 13px; border: 1px solid var(--line); margin: 0 -1px -1px 0;
+  background: var(--surface);
+}
+.cell i { font-family: var(--font-mono); font-style: normal; font-size: 11px; color: var(--muted); padding-top: 4px; }
+
+/* Sections */
+section { padding: 64px 0; border-top: 1px solid var(--line); }
+.sec-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 34px; }
+.sec-head.compact { margin-bottom: 0; }
+.sec-head .idx { font-family: var(--font-mono); font-size: 14px; color: var(--accent); }
+.sec-head h2 { font-size: 25px; font-weight: 600; letter-spacing: -0.03em; }
+
+/* About */
+.about { display: grid; grid-template-columns: 1.4fr 1fr; gap: 80px; }
+.about p { margin: 0 0 14px; max-width: 62ch; }
+.facts { display: grid; gap: 14px; align-content: start; margin: 0; }
+.facts div { border-left: 1px solid var(--accent); padding-left: 14px; }
+.facts dt { font-family: var(--font-mono); font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.facts dd { margin: 2px 0 0; font-weight: 500; }
+
+/* Projects */
+.projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 48px; border-top: 1px solid var(--line); }
+.proj {
+  background: transparent; border-bottom: 1px solid var(--line);
+  padding: 28px 0 32px; display: grid; gap: 12px; align-content: start;
+}
+.proj:hover h3, .proj a:hover { color: var(--accent); }
+.proj.featured { grid-column: span 2; border-bottom-color: var(--accent); padding-top: 34px; }
+.proj-top { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+.proj h3 { font-size: 21px; font-weight: 600; }
+.tag { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+.tag.status { color: var(--accent); }
+.proj p { margin: 0; color: var(--muted); }
+.proj ul { margin: 0; padding-left: 18px; color: var(--muted); }
+.proj ul li { margin-bottom: 4px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font-family: var(--font-mono); font-size: 11px; padding: 3px 7px; border-radius: 2px; background: var(--accent-soft); color: var(--ink); }
+.proj .links { display: flex; gap: 16px; font-size: 15px; font-weight: 500; }
+
+/* Skills table */
+.skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 48px; border-top: 1px solid var(--line); }
+.skill-group { background: transparent; border-bottom: 1px solid var(--line); padding: 20px 0 22px; }
+.skill-group h3 { font-family: var(--font-mono); font-size: 13px; font-weight: 500; color: var(--accent); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.06em; }
+.skill-group p { margin: 0; }
+
+/* Timeline */
+.timeline { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.timeline li { display: grid; grid-template-columns: 130px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px dashed var(--line); }
+.timeline li:last-child { border-bottom: 0; }
+.timeline time { font-family: var(--font-mono); font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.timeline strong { display: block; font-weight: 600; }
+.timeline span { color: var(--muted); }
+
+/* Contact */
+.contact { display: grid; gap: 20px; }
+.contact h2.big { font-size: clamp(28px, 4.5vw, 44px); font-weight: 600; max-width: 20ch; }
+.contact-list { display: flex; flex-wrap: wrap; gap: 12px; }
+.copy-note { font-family: var(--font-mono); font-size: 13px; color: var(--muted); min-height: 1.4em; }
+
+footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--muted); font-size: 14px; }
+footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+footer code { font-family: var(--font-mono); }
+
+@media (max-width: 780px) {
+  nav ul { display: none; }
+  .about, .projects, .skills { grid-template-columns: 1fr; }
+  .proj.featured { grid-column: auto; }
+  .timeline li { grid-template-columns: 1fr; gap: 4px; }
+  .hero { padding: 60px 24px 52px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 36px; }
+  .hero-aside { max-width: 340px; }
+  .hero p.lead { font-size: 18px; }
+  section { padding: 56px 0; }
+}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#content">Skip to content</a>
+<nav aria-label="Main">
+  <div class="wrap">
+    <a class="logo" href="#top">hardhik<span>.</span>kavali</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#journey">Journey</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="top">
+  <header class="wrap hero" id="content">
+    <div class="hero-grid">
+      <div>
+    <div class="eyebrow">AI-ML undergraduate · Ballari, India</div>
+    <h1>Hardhik Kavali</h1>
+    <p class="lead">I build small, useful things while learning how software and machine learning work. Right now that means a DSA practice game, a complaint tracker and a bridge-crack classification project.</p>
+    <div class="cta">
+      <a class="btn primary" href="#projects">See my projects</a>
+      <a class="btn" href="https://github.com/kavalihardhik2-rgb" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.11.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.68.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
+        GitHub
+      </a>
+      <a class="btn" href="https://www.linkedin.com/in/hardhik-kavali-735ab4371" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+        LinkedIn
+      </a>
+    </div>
+      </div>
+      <aside class="hero-aside">
+        <p><strong>Currently</strong>B.E. Artificial Intelligence &amp; Machine Learning</p>
+        <p><strong>Interested in</strong>Software engineering, frontend and practical ML</p>
+        <p><strong>Looking for</strong>An internship where I can contribute and learn</p>
+      </aside>
+    </div>
+    <div>
+      <div class="eyebrow stack-label">Tools I reach for</div>
+      <div class="array" aria-label="Core technologies">
+        <div class="cell"><b>Python</b><i>0</i></div>
+        <div class="cell"><b>Java</b><i>1</i></div>
+        <div class="cell"><b>React.js</b><i>2</i></div>
+        <div class="cell"><b>HTML/CSS</b><i>3</i></div>
+        <div class="cell"><b>SQL</b><i>4</i></div>
+        <div class="cell"><b>SQLite</b><i>5</i></div>
+        <div class="cell"><b>Git</b><i>6</i></div>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head"><span class="idx">[0]</span><h2>About</h2></div>
+      <div class="about">
+        <div>
+          <p>I'm studying for a B.E. in Artificial Intelligence and Machine Learning at Ballari Institute of Technology and Management. My foundation is in Python, C, Java, data structures and algorithms, DBMS and web development.</p>
+          <p>I learn best by building. When I wanted DSA practice to feel less like a chore, I made DSA-Quest. When a course asked for a database project, I designed the schema for a complaint system with user roles and status tracking. I wrote Sudoku in plain JavaScript to see if I could, and my first ML models live in Python and Jupyter.</p>
+          <p>I'm looking for an internship in software or AI/ML where I'd be writing code on something real from the first week.</p>
+        </div>
+        <dl class="facts">
+          <div><dt>Degree</dt><dd>B.E. in AI &amp; ML, 2024 to present</dd></div>
+          <div><dt>College</dt><dd>Ballari Institute of Technology and Management</dd></div>
+          <div><dt>Core areas</dt><dd>Software engineering, frontend, databases, problem solving</dd></div>
+          <div><dt>Open to</dt><dd>Internships and collaborative projects</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="sec-head"><span class="idx">[1]</span><h2>Projects</h2></div>
+      <div class="projects">
+
+        <article class="proj featured">
+          <div class="proj-top"><h3>DSA-Quest</h3><span class="tag">Personal project · 2026</span></div>
+          <p>A game-style site for learning and practising data structures and algorithms.</p>
+          <ul>
+            <li>Built the whole frontend, and it works on phones as well as laptops.</li>
+            <li>Made reusable components for topics and problems, so adding a new one doesn't mean writing a new page.</li>
+          </ul>
+          <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">UI components</span></div>
+          <div class="links"><a href="https://github.com/kavalihardhik2-rgb/DSA-QUEST" target="_blank" rel="noopener">View code →</a></div>
+        </article>
+
+        <article class="proj">
+          <div class="proj-top"><h3>Complaint Reporting System</h3><span class="tag">Course project · 2026</span></div>
+          <p>A platform for submitting, tracking and managing complaints.</p>
+          <ul>
+            <li>CRUD operations, user roles, status tracking and filtering.</li>
+            <li>Designed the ER model and database schema.</li>
+          </ul>
+          <div class="chips"><span class="chip">SQL</span><span class="chip">DBMS</span><span class="chip">ER modelling</span></div>
+        </article>
+
+        <article class="proj">
+          <div class="proj-top"><h3>Bridge Crack Classification</h3><span class="tag status">Mini project · in progress</span></div>
+          <p>I'm reproducing a published study that uses self-supervised models (DINOv2, MoCo v3 and MAE) to sort SDNET2018 bridge images into cracked and not cracked.</p>
+          <p>Next I'll add a second stage that grades each crack as minor, moderate or severe. That part is planned, not built yet.</p>
+          <div class="chips"><span class="chip">Python</span><span class="chip">DINOv2</span><span class="chip">Self-supervised learning</span><span class="chip">SDNET2018</span></div>
+        </article>
+
+        <article class="proj">
+          <div class="proj-top"><h3>Sudoku</h3><span class="tag">Web game</span></div>
+          <p>Sudoku you can play in the browser. No libraries, just HTML, CSS and JavaScript.</p>
+          <div class="chips"><span class="chip">JavaScript</span><span class="chip">HTML</span><span class="chip">CSS</span></div>
+          <div class="links"><a href="https://github.com/kavalihardhik2-rgb/Sudoku" target="_blank" rel="noopener">View code →</a></div>
+        </article>
+
+        <article class="proj">
+          <div class="proj-top"><h3>ML Prediction Model</h3><span class="tag">Machine learning</span></div>
+          <p>A prediction model trained in Python, with a simple web page for trying it out.</p>
+          <div class="chips"><span class="chip">Python</span><span class="chip">ML</span><span class="chip">HTML</span></div>
+          <div class="links">
+            <a href="https://github.com/kavalihardhik2-rgb/ML-PREDICTION-MODEL" target="_blank" rel="noopener">View code →</a>
+            <a href="https://github.com/kavalihardhik2-rgb/ML-MODEL" target="_blank" rel="noopener">Model code →</a>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div class="proj-top"><h3>Python Training Notebooks</h3><span class="tag">5th semester</span></div>
+          <p>My notebooks from the 5th-semester Python training course.</p>
+          <div class="chips"><span class="chip">Python</span><span class="chip">Jupyter</span><span class="chip">Data analysis</span></div>
+          <div class="links"><a href="https://github.com/kavalihardhik2-rgb/5th-Sem-Python-Training" target="_blank" rel="noopener">View notebooks →</a></div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <div class="sec-head"><span class="idx">[2]</span><h2>Skills</h2></div>
+      <div class="skills">
+        <div class="skill-group"><h3>Languages</h3><p>Python, Java, C</p></div>
+        <div class="skill-group"><h3>Frontend</h3><p>React.js, HTML5, CSS3, JavaScript</p></div>
+        <div class="skill-group"><h3>Databases</h3><p>SQL, SQLite, ER modelling</p></div>
+        <div class="skill-group"><h3>Backend</h3><p>Basic backend development, CRUD APIs</p></div>
+        <div class="skill-group"><h3>Tools</h3><p>Git, GitHub, Jupyter Notebook</p></div>
+        <div class="skill-group"><h3>Foundations</h3><p>Data structures &amp; algorithms, DBMS, debugging, prompt engineering</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="journey">
+    <div class="wrap">
+      <div class="sec-head"><span class="idx">[3]</span><h2>Journey so far</h2></div>
+      <ol class="timeline" reversed>
+        <li><time datetime="2026-03">Mar 2026</time><div><strong>The Complete Prompt Engineering for AI Bootcamp</strong><span>Udemy certification</span></div></li>
+        <li><time datetime="2026-03">Mar 2026</time><div><strong>Python for Absolute Beginners</strong><span>Udemy certification</span></div></li>
+        <li><time datetime="2026-02">Feb 2026</time><div><strong>Master Git and GitHub in 5 Days: Go from Zero to Hero</strong><span>Udemy certification</span></div></li>
+        <li><time datetime="2025-12">Dec 2025</time><div><strong>CodeRush Hackathon, IGNITRON 2K25</strong><span>Participant · GM University, Davanagere</span></div></li>
+        <li><time datetime="2024">2024 – now</time><div><strong>B.E. in Artificial Intelligence and Machine Learning</strong><span>Ballari Institute of Technology and Management</span></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact">
+      <div class="sec-head compact"><span class="idx">[4]</span><h2>Contact</h2></div>
+      <h2 class="big">Hiring an intern, or want to build something together? Email me.</h2>
+      <div class="contact-list">
+        <a class="btn primary" href="mailto:kavalihardhik2@gmail.com">kavalihardhik2@gmail.com</a>
+        <button class="btn" type="button" id="copy-email">Copy email</button>
+        <a class="btn" href="https://github.com/kavalihardhik2-rgb" target="_blank" rel="noopener">github.com/kavalihardhik2-rgb</a>
+        <a class="btn" href="https://www.linkedin.com/in/hardhik-kavali-735ab4371" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div class="copy-note" id="copy-note" aria-live="polite"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Hardhik Kavali</span>
+    <span><code>return "thanks for visiting";</code></span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('copy-email').addEventListener('click', async function () {
+  var note = document.getElementById('copy-note');
+  try {
+    await navigator.clipboard.writeText('kavalihardhik2@gmail.com');
+    note.textContent = 'Email copied to clipboard.';
+  } catch (e) {
+    note.textContent = 'Could not copy automatically. The address is kavalihardhik2@gmail.com';
+  }
+});
+</script>
+</body>
+</html>
